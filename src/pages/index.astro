@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Home">
+  <Navigation />
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center bg-gradient-to-r from-primary-900 to-primary-700">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920'); mix-blend-mode: overlay;"></div>
+
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        Transform Your Outdoor Space
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-gray-100">
+        Professional landscaping services to bring your vision to life
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition-colors font-semibold text-lg shadow-lg"
+        >
+          Get Free Quote
+        </a>
+        <a
+          href="tel:555-123-4567"
+          class="bg-white text-primary-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg shadow-lg"
+        >
+          Call (555) 123-4567
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          We deliver exceptional landscaping services with attention to detail and customer satisfaction
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">15+ Years Experience</h3>
+          <p class="text-gray-600">
+            Trusted by hundreds of satisfied homeowners and businesses in the area
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Competitive Pricing</h3>
+          <p class="text-gray-600">
+            Quality work at fair prices with transparent quotes and no hidden fees
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Satisfaction Guaranteed</h3>
+          <p class="text-gray-600">
+            We stand behind our work with a 100% satisfaction guarantee on all services
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Comprehensive landscaping solutions for residential and commercial properties
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow h-64">
+          <img src="https://images.unsplash.com/photo-1587897845403-784d0ce89e93?w=600" alt="Lawn Care" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold mb-2">Lawn Care</h3>
+            <p class="text-sm">Mowing, edging, fertilization</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow h-64">
+          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600" alt="Landscape Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold mb-2">Landscape Design</h3>
+            <p class="text-sm">Custom designs & installations</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow h-64">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600" alt="Hardscaping" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold mb-2">Hardscaping</h3>
+            <p class="text-sm">Patios, walkways, retaining walls</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow h-64">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600" alt="Tree Services" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold mb-2">Tree & Shrub Care</h3>
+            <p class="text-sm">Pruning, planting, removal</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="/services"
+          class="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg hover:bg-primary-700 transition-colors font-semibold"
+        >
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-primary-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-4">Ready to Transform Your Landscape?</h2>
+      <p class="text-xl mb-8 text-primary-100">
+        Get a free, no-obligation quote today
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-white text-primary-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg shadow-lg"
+      >
+        Request Free Quote
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">
+            "GreenScape Pro transformed our backyard into an amazing outdoor living space. Professional, reliable, and the results exceeded our expectations!"
+          </p>
+          <p class="font-semibold text-gray-900">- Sarah Johnson</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">
+            "Best landscaping company in town! They maintain our commercial property and it always looks pristine. Highly recommend their services."
+          </p>
+          <p class="font-semibold text-gray-900">- Michael Chen</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">
+            "From design to installation, they were fantastic. Our new patio and landscaping are beautiful and exactly what we wanted."
+          </p>
+          <p class="font-semibold text-gray-900">- Emily Rodriguez</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: 'Lawn Care & Maintenance',
+    description: 'Keep your lawn looking pristine year-round with our comprehensive lawn care services.',
+    features: [
+      'Weekly or bi-weekly mowing',
+      'Edging and trimming',
+      'Fertilization programs',
+      'Weed control',
+      'Aeration and overseeding',
+      'Seasonal cleanup'
+    ],
+    priceRange: '$50-$150/visit',
+    image: 'https://images.unsplash.com/photo-1587897845403-784d0ce89e93?w=800'
+  },
+  {
+    title: 'Landscape Design & Installation',
+    description: 'Transform your property with custom landscape designs tailored to your vision and budget.',
+    features: [
+      'Custom design consultation',
+      '3D rendering',
+      'Plant selection and placement',
+      'Garden bed installation',
+      'Mulching and rock work',
+      'Irrigation system design'
+    ],
+    priceRange: '$500-$5,000+',
+    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800'
+  },
+  {
+    title: 'Hardscaping Services',
+    description: 'Create beautiful outdoor living spaces with professional hardscaping installations.',
+    features: [
+      'Paver patios and walkways',
+      'Retaining walls',
+      'Fire pits and outdoor kitchens',
+      'Decorative stone work',
+      'Drainage solutions',
+      'Outdoor lighting'
+    ],
+    priceRange: '$2,000-$15,000+',
+    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800'
+  },
+  {
+    title: 'Tree & Shrub Care',
+    description: 'Expert tree and shrub services to keep your plants healthy and beautiful.',
+    features: [
+      'Professional pruning',
+      'Tree and shrub planting',
+      'Disease diagnosis',
+      'Pest management',
+      'Tree removal',
+      'Stump grinding'
+    ],
+    priceRange: '$100-$1,000+',
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800'
+  },
+  {
+    title: 'Irrigation Systems',
+    description: 'Efficient irrigation solutions to keep your landscape healthy while conserving water.',
+    features: [
+      'System design and installation',
+      'Smart controller setup',
+      'Sprinkler repair',
+      'Seasonal maintenance',
+      'Drip irrigation',
+      'Water efficiency audits'
+    ],
+    priceRange: '$1,500-$5,000+',
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800'
+  },
+  {
+    title: 'Seasonal Services',
+    description: 'Year-round maintenance to keep your property looking its best in every season.',
+    features: [
+      'Spring cleanup',
+      'Fall leaf removal',
+      'Mulch installation',
+      'Holiday lighting',
+      'Snow removal (winter)',
+      'Storm damage cleanup'
+    ],
+    priceRange: '$75-$500/service',
+    image: 'https://images.unsplash.com/photo-1634587095447-625cd79bcac7?w=800'
+  }
+];
+---
+
+<Layout title="Services" description="Comprehensive landscaping services for residential and commercial properties">
+  <Navigation />
+
+  <!-- Hero Section -->
+  <section class="relative h-96 flex items-center justify-center bg-primary-700">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920'); mix-blend-mode: overlay;"></div>
+
+    <div class="relative z-10 text-center text-white px-4">
+      <h1 class="text-5xl font-bold mb-4">Our Services</h1>
+      <p class="text-xl text-gray-100">
+        Professional landscaping solutions for every need
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">What We Offer</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          From routine maintenance to complete landscape transformations, we provide comprehensive services to meet all your outdoor needs
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {services.map((service, index) => (
+          <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow`}>
+            <div class="md:w-1/2">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover min-h-[300px]"
+              />
+            </div>
+            <div class="md:w-1/2 p-8">
+              <h3 class="text-3xl font-bold text-gray-900 mb-3">{service.title}</h3>
+              <p class="text-gray-600 mb-6">{service.description}</p>
+
+              <h4 class="text-lg font-semibold text-gray-900 mb-3">Services Include:</h4>
+              <ul class="space-y-2 mb-6">
+                {service.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg class="w-6 h-6 text-primary-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-sm text-gray-500">Starting at</span>
+                  <p class="text-2xl font-bold text-primary-600">{service.priceRange}</p>
+                </div>
+                <a
+                  href="/contact"
+                  class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-semibold"
+                >
+                  Get Quote
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Process</h2>
+        <p class="text-xl text-gray-600">Simple, transparent, and designed around your needs</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            1
+          </div>
+          <h3 class="text-xl font-bold mb-2">Contact Us</h3>
+          <p class="text-gray-600">Call or fill out our online form to schedule a consultation</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            2
+          </div>
+          <h3 class="text-xl font-bold mb-2">Free Consultation</h3>
+          <p class="text-gray-600">We visit your property to assess your needs and vision</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            3
+          </div>
+          <h3 class="text-xl font-bold mb-2">Custom Proposal</h3>
+          <p class="text-gray-600">Receive a detailed quote with transparent pricing</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+            4
+          </div>
+          <h3 class="text-xl font-bold mb-2">Quality Work</h3>
+          <p class="text-gray-600">Our team delivers exceptional results on time</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-primary-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="text-xl mb-8 text-primary-100">
+        Contact us today for a free consultation and quote
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="bg-white text-primary-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg"
+        >
+          Request Quote
+        </a>
+        <a
+          href="tel:555-123-4567"
+          class="bg-primary-700 text-white px-8 py-4 rounded-lg hover:bg-primary-800 transition-colors font-semibold text-lg border-2 border-white"
+        >
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

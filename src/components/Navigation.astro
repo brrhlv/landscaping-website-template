@@ -1,0 +1,95 @@
+---
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-2">
+        <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/>
+        </svg>
+        <span class="text-2xl font-bold text-gray-900">GreenScape<span class="text-primary-600">Pro</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex space-x-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`text-gray-700 hover:text-primary-600 font-medium transition-colors ${
+                currentPath === item.href ? 'text-primary-600 border-b-2 border-primary-600' : ''
+              }`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA Button -->
+      <a
+        href="tel:555-123-4567"
+        class="hidden md:block bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-semibold"
+      >
+        Call Now
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden text-gray-700 focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <ul class="space-y-2">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`block py-2 text-gray-700 hover:text-primary-600 font-medium ${
+                currentPath === item.href ? 'text-primary-600' : ''
+              }`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a
+            href="tel:555-123-4567"
+            class="block bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-semibold text-center mt-4"
+          >
+            Call Now
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
